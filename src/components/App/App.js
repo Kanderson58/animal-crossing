@@ -34,14 +34,13 @@ const App = () => {
     const newFish = allFish[Math.floor(Math.random() * allFish.length)];
     setCaughtFish(newFish);
 
-    if (!fishList.find(fish => fish.id === newFish.id)) {
-      setFishList([...fishList, newFish]);
-    }
-    setCollectedFish([...fishList, newFish]);
+    setFishList([...fishList, newFish]);
+    setCollectedFish([...fishList, newFish])
   }
   
   return (
     <main>
+      {console.log(collectedFish)}
       {!loggedIn && <Login setLoggedIn={setLoggedIn}/>}
       {loggedIn && <>
       <ReactAudioPlayer
