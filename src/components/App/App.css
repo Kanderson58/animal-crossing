@@ -35,3 +35,7 @@ h1 {
   background-clip: content-box;
   background-color: #d55959;
 }
+
+.audio-player {
+  display: none;
+}
