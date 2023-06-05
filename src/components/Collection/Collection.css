@@ -1,0 +1,24 @@
+.collection {
+  margin: 2px;
+  background-color: #eee7b7;
+  border: #d2cc9f 1px solid;
+  height: 165px;
+}
+
+.fishIcon {
+  cursor: pointer;
+  background-color: #eee7b7;
+  margin: none;
+}
+
+.fishIcon:hover {
+  opacity: 50%;
+}
+
+.fishName {
+  text-align: center;
+  font-family: 'Delicious Handrawn', cursive;
+  background: none;
+  margin: none;
+  line-height: 0;
+}
