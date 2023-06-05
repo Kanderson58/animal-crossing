@@ -6,11 +6,13 @@ import { useEffect, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import React from 'react';
 import Login from '../Login/Login';
+import CaughtFish from '../CaughtFish/CaughtFish';
 
 const App = () => {
   const [allFish, setAllFish] = useState([]);
   const [collectedFish, setCollectedFish] = useState([]);
   const [fishList, setFishList] = useState([]);
+  const [caughtFish, setCaughtFish] = useState({});
   const [music, setMusic] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -30,6 +32,8 @@ const App = () => {
 
   const goFishing = () => {
     const newFish = allFish[Math.floor(Math.random() * allFish.length)];
+    setCaughtFish(newFish);
+
     if (!fishList.find(fish => fish.id === newFish.id)) {
       setFishList([...fishList, newFish]);
     }
@@ -37,7 +41,7 @@ const App = () => {
   }
   
   return (
-    <div>
+    <main>
       {!loggedIn && <Login setLoggedIn={setLoggedIn}/>}
       {loggedIn && <>
       <ReactAudioPlayer
@@ -50,13 +54,14 @@ const App = () => {
         className='audio-player'
       />
       <Fish goFishing={goFishing}/>
+      {caughtFish['file-name'] && <CaughtFish caughtFish={caughtFish}/>}
       <h1>My Collection</h1>
       <div className='main'>
         {collectedFish.sort((a, b) => a.id - b.id).map(fish => {
           return <Collection key={fish['file-name']} fish={fish} />})}
       </div>
       </>}
-    </div>
+    </main>
   )
 }
 
