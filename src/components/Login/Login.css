@@ -1,0 +1,114 @@
+.ocean {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(11, 70, 90, 0.823);
+  overflow: hidden;
+}
+
+.fish {
+  position: absolute;
+  bottom: calc(50% - 50px);
+  width: 100px;
+  height: 50px;
+  background-image: url(../../fishies.png);
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  animation: swimBounce 20s linear infinite;
+}
+
+@keyframes swimBounce {
+  0%, 100% {
+    transform: translateX(-100px) translateY(0px);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-60px);
+  }
+  50% {
+    transform: translateX(50vw) translateY(20px);
+  }
+  75% {
+    transform: translateX(75vw) translateY(-40px);
+  }
+  100% {
+    transform: translateX(100vw) translateY(0px);
+  }
+}
+
+.jellyfish {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 40px;
+  height: 60px;
+  background-image: url(../../jellyFish.png);
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  animation: float 25s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-25vh) translateX(-10px);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(10px);
+  }
+  75% {
+    transform: translateY(-75vh) translateX(-10px);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(0);
+  }
+}
+
+.shark {
+  position: absolute;
+  bottom: calc(60% - 100px);
+  width: 300px;
+  height: 150px;
+  background-image: url(../../shark.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  animation: swimBounce 25s linear infinite;
+}
+
+.turtle {
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  width: 200px;
+  height: 150px;
+  background-image: url(../../turtle.png);
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: swimLeftToRight 25s linear infinite;
+}
+
+@keyframes swimLeftToRight {
+  0% {
+    transform: translate(-100px, 0);
+  }
+  100% {
+    transform: translate(calc(100vw + 100px), -100vh);
+  }
+}
+
+.login-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
