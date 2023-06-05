@@ -37,10 +37,21 @@ const App = () => {
     setFishList([...fishList, newFish]);
     setCollectedFish([...fishList, newFish])
   }
+
+  const uniqueFish = collectedFish?.reduce((acc, cur) => {
+    if(acc[cur.id]) {
+      acc[cur.id] = cur
+    } else {
+      acc[cur.id] = cur
+    }
+    return acc
+  }, {})
+  
+  const fishDisplay = Object.values(uniqueFish)?.sort((a, b) => a.id - b.id).map(fish => {
+    return <Collection key={fish['file-name']} fish={fish} />})
   
   return (
     <main>
-      {console.log(collectedFish)}
       {!loggedIn && <Login setLoggedIn={setLoggedIn}/>}
       {loggedIn && <>
       <ReactAudioPlayer
@@ -56,8 +67,7 @@ const App = () => {
       {caughtFish['file-name'] && <CaughtFish caughtFish={caughtFish}/>}
       <h1>My Collection</h1>
       <div className='main'>
-        {collectedFish.sort((a, b) => a.id - b.id).map(fish => {
-          return <Collection key={fish['file-name']} fish={fish} />})}
+        {fishDisplay}
       </div>
       </>}
     </main>
