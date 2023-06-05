@@ -1,13 +1,13 @@
 .collection {
   margin: 2px;
-  background-color: #eee7b7;
-  border: #d2cc9f 1px solid;
+  background-color: #9ba5c2;
+  border: #d2cc9f 2px solid;
   height: 165px;
 }
 
 .fishIcon {
   cursor: pointer;
-  background-color: #eee7b7;
+  background-color: #9ba5c2;
   margin: none;
 }
 

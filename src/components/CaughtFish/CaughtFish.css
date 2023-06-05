@@ -2,4 +2,11 @@
   text-align: center;
   width: 30%;
   border: #d2cc9f 3px solid;
+  font-size: large;
 }
+
+/* .caught-fish,
+.caught-fish > p,
+.caught-fish > img {
+  background-color: #7585c8;
+} */

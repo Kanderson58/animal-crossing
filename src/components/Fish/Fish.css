@@ -6,4 +6,10 @@
 .go-fishing-btn {
   border: none;
   font-family: 'Delicious Handrawn', cursive;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.go-fishing-btn:hover {
+  scale: 1.05;
 }

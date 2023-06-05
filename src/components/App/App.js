@@ -35,16 +35,16 @@ const App = () => {
     setCaughtFish(newFish);
 
     setFishList([...fishList, newFish]);
-    setCollectedFish([...fishList, newFish])
+    setCollectedFish([...fishList, newFish]);
   }
 
   const uniqueFish = collectedFish?.reduce((acc, cur) => {
     if(acc[cur.id]) {
-      acc[cur.id] = cur
+      acc[cur.id] = cur;
     } else {
-      acc[cur.id] = cur
+      acc[cur.id] = cur;
     }
-    return acc
+    return acc;
   }, {})
   
   const fishDisplay = Object.values(uniqueFish)?.sort((a, b) => a.id - b.id).map(fish => {
