@@ -7,14 +7,13 @@ import { useEffect, useState } from 'react';
 const App = () => {
   const [allFish, setAllFish] = useState([]);
   const [collectedFish, setCollectedFish] = useState([]);
-  const [caughtFish, setCaughtFish] = useState({});
   const [fishList, setFishList] = useState([]);
 
   useEffect(() => {
     getFish().then(data => {
       setAllFish(Object.keys(data).map(key => data[key]))
     })
-  }, [caughtFish]);
+  }, [fishList]);
 
   const goFishing = () => {
     const newFish = allFish[Math.floor(Math.random() * allFish.length)];
